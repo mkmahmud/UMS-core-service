@@ -20,7 +20,7 @@ router.post(
 
 // Delete Semester Data by Id
 router.delete(
-  '/',
+  '/:id',
   auth(ENUM_USER_ROLE.SUPER_ADMIN, ENUM_USER_ROLE.ADMIN),
   academicSemesterController.deleteSemesterById
 );
@@ -34,6 +34,6 @@ router.patch(
 );
 
 // Get All Semester Data
-router.get('/:id', academicSemesterController.getAllSemester);
+router.get('/', academicSemesterController.getAllSemester);
 
 export const academicSemesterRoutes = router;
