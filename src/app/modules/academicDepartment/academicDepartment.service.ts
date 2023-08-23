@@ -1,24 +1,24 @@
-import { AcademicFaculty, Prisma } from '@prisma/client';
+import { AcademicDepartment, Prisma } from '@prisma/client';
 import { paginationHelpers } from '../../../helpers/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common';
 import { IPaginationOptions } from '../../../interfaces/pagination';
 import prisma from './prisma';
 
-// createing Faculty
-const createAcademicFaculty = async (
-  AcademicFacultydata: AcademicFaculty
-): Promise<AcademicFaculty> => {
-  const result = await prisma.academicFaculty.create({
-    data: AcademicFacultydata,
+// createing Department
+const createAcademicDepartment = async (
+  AcademicDepartmentdata: AcademicDepartment
+): Promise<AcademicDepartment> => {
+  const result = await prisma.academicDepartment.create({
+    data: AcademicDepartmentdata,
   });
   return result;
 };
 
-// Getting all Faculty data
-const getAllFacultyData = async (
+// Getting all Department data
+const getAllDepartmentData = async (
   filters: any,
   options: IPaginationOptions
-): Promise<IGenericResponse<AcademicFaculty[]>> => {
+): Promise<IGenericResponse<AcademicDepartment[]>> => {
   const { page, limit, skip } = paginationHelpers.calculatePagination(options);
 
   const { searchTerm, ...filterData } = filters;
@@ -26,7 +26,7 @@ const getAllFacultyData = async (
 
   if (searchTerm) {
     andConditons.push({
-      OR: ['title', 'code', 'startMonth', 'endMonth'].map(field => ({
+      OR: ['title'].map(field => ({
         [field]: {
           contains: searchTerm,
           mode: 'insensitive',
@@ -45,9 +45,9 @@ const getAllFacultyData = async (
     });
   }
 
-  const whereConditons: Prisma.AcademicFacultyWhereInput =
+  const whereConditons: Prisma.AcademicDepartmentWhereInput =
     andConditons.length > 0 ? { AND: andConditons } : {};
-  const result = await prisma.academicFaculty.findMany({
+  const result = await prisma.academicDepartment.findMany({
     where: whereConditons,
     skip,
     take: limit,
@@ -61,7 +61,7 @@ const getAllFacultyData = async (
           },
   });
 
-  const total = await prisma.academicFaculty.count();
+  const total = await prisma.academicDepartment.count();
   return {
     meta: {
       total,
@@ -72,11 +72,11 @@ const getAllFacultyData = async (
   };
 };
 
-// Get singel Faculty Data
-const getFacultyDataById = async (
+// Get singel Department Data
+const getDepartmentDataById = async (
   id: string
-): Promise<AcademicFaculty | null> => {
-  const result = await prisma.academicFaculty.findUnique({
+): Promise<AcademicDepartment | null> => {
+  const result = await prisma.academicDepartment.findUnique({
     where: {
       id,
     },
@@ -85,12 +85,12 @@ const getFacultyDataById = async (
   return result;
 };
 
-// Update Faculty by Id
-const updateFaculty = async (
+// Update Department by Id
+const updateDepartment = async (
   id: string,
-  payload: Partial<AcademicFaculty>
-): Promise<AcademicFaculty> => {
-  const result = await prisma.academicFaculty.update({
+  payload: Partial<AcademicDepartment>
+): Promise<AcademicDepartment> => {
+  const result = await prisma.academicDepartment.update({
     where: {
       id,
     },
@@ -100,9 +100,9 @@ const updateFaculty = async (
   return result;
 };
 
-// Delet Faculty by Id
-const deleteFaculty = async (id: string) => {
-  const result = await prisma.academicFaculty.delete({
+// Delet Department by Id
+const deleteDepartment = async (id: string) => {
+  const result = await prisma.academicDepartment.delete({
     where: {
       id,
     },
@@ -111,10 +111,10 @@ const deleteFaculty = async (id: string) => {
   return result;
 };
 
-export const AcademicFacultyService = {
-  createAcademicFaculty,
-  getAllFacultyData,
-  getFacultyDataById,
-  updateFaculty,
-  deleteFaculty,
+export const AcademicDepartmentService = {
+  createAcademicDepartment,
+  getAllDepartmentData,
+  getDepartmentDataById,
+  updateDepartment,
+  deleteDepartment,
 };
