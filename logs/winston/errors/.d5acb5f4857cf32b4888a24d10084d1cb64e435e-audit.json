@@ -1,0 +1,45 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\PH_N_2\\ums-core-service\\logs\\winston\\errors\\.d5acb5f4857cf32b4888a24d10084d1cb64e435e-audit.json",
+    "files": [
+        {
+            "date": 1692458295671,
+            "name": "D:\\PH_N_2\\ums-core-service\\logs\\winston\\errors\\phu-2023-19-08-21-error.log",
+            "hash": "210c19ab641181d62550e1aaeb8aab8e79b30b932956cb8b96fd06cf40acf9fa"
+        },
+        {
+            "date": 1692466544867,
+            "name": "D:\\PH_N_2\\ums-core-service\\logs\\winston\\errors\\phu-2023-19-08-23-error.log",
+            "hash": "9399c4a8b4dd987d4a8e1836ab8c00523a1a1651bf3a5a6cc51cabcc02c8da01"
+        },
+        {
+            "date": 1692547545183,
+            "name": "D:\\PH_N_2\\ums-core-service\\logs\\winston\\errors\\phu-2023-20-08-22-error.log",
+            "hash": "53d5cdd519febf762af13a92d8c24c3972fd29b848c11bf28176f87bfda119a2"
+        },
+        {
+            "date": 1692551319812,
+            "name": "D:\\PH_N_2\\ums-core-service\\logs\\winston\\errors\\phu-2023-20-08-23-error.log",
+            "hash": "ee693ad73e603bcc09f27893ebf9758fa2e0bdf612a4a5b59d9784e58c1b9d82"
+        },
+        {
+            "date": 1692583516658,
+            "name": "D:\\PH_N_2\\ums-core-service\\logs\\winston\\errors\\phu-2023-21-08-08-error.log",
+            "hash": "0d997430ff1e2664ebf3d5f6f7af7765bc5101ded6bfc3df99efff04405f95b8"
+        },
+        {
+            "date": 1692761773918,
+            "name": "D:\\PH_N_2\\ums-core-service\\logs\\winston\\errors\\phu-2023-23-08-09-error.log",
+            "hash": "060b963317d846ca4f348ac62b1575f4a731a6229877ef5a52da11277ded8808"
+        },
+        {
+            "date": 1692763462770,
+            "name": "D:\\PH_N_2\\ums-core-service\\logs\\winston\\errors\\phu-2023-23-08-10-error.log",
+            "hash": "d8eaf2350f5cf4ced5971e049def946e8352547b33857d1c9d489275b451def2"
+        }
+    ],
+    "hashType": "sha256"
+}
