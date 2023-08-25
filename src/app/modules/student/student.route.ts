@@ -18,12 +18,7 @@ const validateUpdateRequest = validateRequest(StudentValidation.update);
 router.get('/:id', StudentController.getStudentDataById);
 
 // Create  Student
-router.post(
-  '/',
-  requireAdminRole,
-  validateCreateRequest,
-  StudentController.createStudent
-);
+router.post('/', validateCreateRequest, StudentController.createStudent);
 
 // Update  Student
 router.patch(

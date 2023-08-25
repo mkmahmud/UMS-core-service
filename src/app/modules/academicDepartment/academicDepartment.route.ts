@@ -24,7 +24,6 @@ router.get('/:id', academicDepartmentController.getDepartmentDataById);
 // Create Academic Department
 router.post(
   '/',
-  requireAdminRole,
   validateCreateRequest,
   academicDepartmentController.createAcademicDepartment
 );
