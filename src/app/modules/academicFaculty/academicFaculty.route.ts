@@ -20,7 +20,6 @@ router.get('/:id', academicFacultyController.getFacultyDataById);
 // Create Academic Faculty
 router.post(
   '/',
-  requireAdminRole,
   validateCreateRequest,
   academicFacultyController.createAcademicFaculty
 );

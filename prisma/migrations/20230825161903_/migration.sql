@@ -1,16 +1,7 @@
-/*
-  Warnings:
-
-  - You are about to drop the `User` table. If the table is not empty, all the data it contains will be lost.
-
-*/
--- DropTable
-DROP TABLE "User";
-
 -- CreateTable
 CREATE TABLE "academic_semester" (
     "id" TEXT NOT NULL,
-    "year" TEXT NOT NULL,
+    "year" INTEGER NOT NULL,
     "title" TEXT NOT NULL,
     "code" TEXT NOT NULL,
     "startMonth" TEXT NOT NULL,
@@ -66,7 +57,7 @@ CREATE TABLE "student" (
 -- CreateTable
 CREATE TABLE "faculty" (
     "id" TEXT NOT NULL,
-    "studentId" TEXT NOT NULL,
+    "facultyId" TEXT NOT NULL,
     "firstName" TEXT NOT NULL,
     "lastName" TEXT NOT NULL,
     "middleName" TEXT NOT NULL,
